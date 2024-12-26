@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Voting Application</h1>
+    </header>
+
+    <!-- Role Selection Page -->
+    <div id="role-selection">
+      <h2>Welcome! Please choose your role:</h2>
+      <div class="button-container">
+        <button id="user-btn">User</button>
+        <button id="admin-btn">Admin</button>
+      </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="hidden">
+      <h2 id="login-title">Log In</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" id="login-submit">Log In</button>
+        <p id="form-message2"></p>
+        
+        <p id="signup-link" class="hidden">Don't have an account? <span id="show-signup">Sign up here</span></p>
+      </form>
+    </div>
+
+    <!-- Signup Page -->
+
+    <!-- // user data->
+// name 
+// age
+// email
+// state
+// {username
+// password } ->to be asked while logging in the user -->
+
+    <div id="signup-page" class="hidden">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="age">age:</label>
+        <input type="text" id="age" name="age" required>
+        <br><br>
+
+        <label for="state">state:</label>
+        <input type="text" id="state" name="state" required>
+        <br><br>
+
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" name="username" required>
+        <br><br>
+
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="password" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <button id="signup-submit" type="button">Sign Up</button>
+        <p id="form-message"></p>
+
+      </form>
+    </div>
+
+    <!-- User Dashboard -->
+    <div id="user-dashboard" class="hidden">
+      <h2>Active Elections</h2>
+      <div id="election-cards" class="card-container"></div>
+      <button class="logout-btn">Log Out</button>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <!-- <div id="admin-dashboard" class="hidden">
+      <h2>Admin Dashboard</h2>
+      <button id="create-election-btn">Create Election</button>
+      <div id="election-cards-admin" class="card-container"></div>
+      <button class="logout-btn">Log Out</button>
+    </div>
+  </div> -->
+
+  <div id="admin-dashboard" class="hidden">
+    <h2>Admin Dashboard</h2>
+    <div id="election-cards-admin"></div>
+    <form id="create-election-form">
+        <h3>Create Election</h3>
+        <input type="text" id="election-name" placeholder="Election Name" required>
+        <input type="date" id="election-start-date" required>
+        <input type="date" id="election-end-date" required>
+        <button id="election-submit" type="submit">Create Election</button>
+    </form>
+    <form id="add-candidate-form">
+        <h3>Add Candidate</h3>
+        <input type="text" id="candidate-name" placeholder="Candidate Name" required>
+        <input type="text" id="candidate-party" placeholder="Party" required>
+        <input type="text" id="electionId" placeholder="Election ID" required>
+        <button id="candidate-submit" type="submit">Add Candidate</button>
+    </form>
+    <button class="logout-btn">Logout</button>
+</div>
+<div id="election-list"></div>
+
+<div id = "vote-page">
+  <h2 id = "election-name"></h2>
+  <div id="candidate-list">
+
+  </div>
+  <button id="cast-vote-btn" onclick="SubmitVote()"> Cast your vote</button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
